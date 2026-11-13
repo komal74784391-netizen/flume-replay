@@ -1,24 +1,12 @@
-# Signal Drift Audit
+# Flume Replay
 
-Status: **Released** - v1.0.0 (2026-09-30)
+Status: **Released** - v1.2.0 (2026-10-02)
 
-A toolkit for auditing slow drift in long-horizon sensor meshes.  It ingests
-multi-channel time series, estimates baseline behaviour with a robust rolling
-median, and reports per-channel drift scores.
+Deterministic replay of recorded edge streams.  The library preserves ordering,
+timestamps and per-record metadata so that replay runs can be compared exactly.
 
-## Implementation
+## Layout
 
-- `src/drift_audit/core.py` - stream loading and rolling baseline estimation
-- `src/drift_audit/metrics.py` - drift score and error metrics
-- `data/manifest.csv` - example stream manifest
-- `experiments/calibration_report.md` - calibration experiment notes
-
-## Quick start
-
-```bash
-python -m drift_audit.core data/manifest.csv
-```
-
-## Citation
-
-Cite the NRS 2027 proceedings entry if you use this toolkit.
+- `src/flume_replay/replay.py` - reader, replayer and checkpoints
+- `data/sample_streams.json` - two short example streams
+- `experiments/throughput.md` - throughput experiment notes
